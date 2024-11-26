@@ -1,0 +1,44 @@
+Design Approach
+Main Window:
+
+Search Bar: Filters entries as you type.
+History List: Displays clipboard entries in a scrollable view.
+Action Buttons:
+Copy: Places selected text back in the clipboard.
+Pin: Pins the selected entry.
+Delete: Removes the selected entry.
+Data Handling:
+
+Poll the clipboard every few seconds to check for new entries.
+Prevent duplicates by comparing the current clipboard content with the last entry.
+CLI Integration:
+
+Use command-line arguments to support listing and copying entries.
+Code Implementation
+Here’s a starting point in C using GTK:
+
+Dependencies
+Install required libraries:
+
+sudo apt install -y libgtk-3-dev x11-xserver-utils xclip
+
+gcc clipboard-manager.c -o clipboard-manager `pkg-config --cflags --libs gtk+-3.0` /usr/lib/aarch64-linux-gnu/libX11.so
+
+
+
+Next Steps
+Persistent History:
+
+Load from ~/.clipboard_history on startup.
+Save to the file when exiting.
+Search and Filter:
+
+Add a search bar and filter the GtkListBox rows dynamically.
+Pin and Delete:
+
+Add context menu or buttons for pinning/deleting entries.
+
+
+
+
+

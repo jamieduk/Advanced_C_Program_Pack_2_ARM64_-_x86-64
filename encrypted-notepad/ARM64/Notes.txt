@@ -1,0 +1,13 @@
+
+
+sudo apt install -y libgtk-3-dev libssl-dev
+
+
+gcc -o encrypted-notepad encrypted-notepad.c `pkg-config --cflags --libs gtk+-3.0` -lssl -lcrypto
+
+
+./encrypted-notepad
+
+
+password example for v2 encrypted file
+V5B*P6)T

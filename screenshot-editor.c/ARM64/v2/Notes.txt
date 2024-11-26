@@ -1,0 +1,21 @@
+
+
+
+gcc screenshot-editor.c -o screenshot-editor `pkg-config --cflags --libs gtk+-3.0`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

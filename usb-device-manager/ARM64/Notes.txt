@@ -1,0 +1,18 @@
+sudo apt update
+sudo apt install -y libudev-dev
+
+
+gcc usb-device-manager.c -o usb-device-manager `pkg-config --cflags --libs gtk+-3.0` -ludev
+
+
+
+
+
+
+
+
+
+
+
+
+

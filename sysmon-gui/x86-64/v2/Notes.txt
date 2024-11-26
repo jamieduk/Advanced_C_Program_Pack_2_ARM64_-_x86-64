@@ -1,0 +1,4 @@
+
+sudo apt-get install -y libgtk-3-dev libcairo2-dev
+
+gcc -o sysmon-gui sysmon-gui.c `pkg-config --cflags --libs gtk+-3.0`

@@ -1,0 +1,127 @@
+
+
+1. Clipboard Manager with GUI
+Purpose: A clipboard history manager for tracking and reusing copied content.
+GUI Features:
+Displays a scrollable history of clipboard entries.
+Options to pin, delete, or search entries.
+Button to copy a selected entry back to the clipboard.
+Optional CLI Mode:
+List the clipboard history and retrieve entries by index.
+Libraries: GTK or Qt for the GUI, with xclip or wl-clipboard for clipboard interaction.
+
+Clipboard-Manager-with/ARM64
+
+
+2. File Hash Checker and Verifier
+Purpose: Verify file integrity by generating or comparing hash values (e.g., MD5, SHA256).
+GUI Features:
+Drag-and-drop files to compute hashes.
+Save hashes to a file or compare them with pre-stored values.
+Color-coded results for easy validation.
+Optional CLI Mode:
+Generate or compare a hash via terminal.
+Libraries: GTK/Qt for GUI, OpenSSL for hashing.
+
+File-Hash-Checker/ARM64
+
+
+3. System Resource Visualizer with Graphs
+Purpose: Real-time system monitoring with visual representations.
+GUI Features:
+Displays live graphs for CPU, RAM, disk usage, and network activity.
+Colorful line or bar graphs for easy understanding.
+Export stats to CSV or JSON.
+Optional CLI Mode:
+Output live stats in text format.
+Libraries: GTK/Qt with Cairo for drawing graphs.
+
+sysmon-gui/ARM64
+
+
+4. Secure Notepad with Encryption
+Purpose: A GUI-based encrypted notepad for storing sensitive notes.
+GUI Features:
+Rich text formatting (font size, color, bold/italic).
+Encrypt and save notes securely with AES or XOR.
+Open and decrypt notes by entering a password.
+Optional CLI Mode:
+Read/write encrypted notes via terminal.
+Libraries: GTK or Qt for GUI, OpenSSL for encryption.
+
+encrypted-notepad/ARM64
+
+
+5. Audio Cutter and Converter
+Purpose: Cut or convert audio files using a simple graphical interface.
+GUI Features:
+Add an audio file, select start and end times, and export.
+Convert formats (e.g., MP3, WAV, FLAC).
+Batch processing for multiple files.
+Optional CLI Mode:
+Perform cuts or conversions via command-line flags.
+Libraries: GTK/Qt for GUI, FFmpeg for audio processing.
+
+Audio-Cutter-and-Converter/ARM64
+
+
+6. Simple Backup Tool with Scheduling
+Purpose: A GUI-based backup tool to archive and schedule backups.
+GUI Features:
+Select directories/files to back up.
+Options for incremental or full backups.
+Built-in scheduler with notifications for missed backups.
+Optional CLI Mode:
+Trigger backups via terminal commands.
+Libraries: GTK/Qt for GUI, rsync or custom archiving for backups.
+
+Simple-Backup-Tool/ARM64
+
+
+
+7. Image Compressor with Preview
+c program with About button saying Author Jay Mee called image-compressor.c
+Purpose: Compress image files while previewing the quality.
+GUI Features:
+Drag-and-drop support for adding images.
+Adjustable compression level with real-time preview.
+Batch compression with options to maintain original files.
+Optional CLI Mode:
+Compress images via command-line flags.
+Libraries: GTK/Qt for GUI, libjpeg or stb_image for processing.
+
+image-compressor/ARM64
+
+
+
+8. USB Device Manager
+c program with About button saying Author Jay Mee filename called usb-device-manager.c
+Purpose: Manage and monitor USB devices through a GUI.
+GUI Features:
+Display connected USB devices with details (e.g., vendor ID, product ID, file system).
+Safely eject devices or mount/unmount drives.
+Option to format USB drives directly.
+Optional CLI Mode:
+List and manage USB devices via commands.
+Libraries: GTK/Qt for GUI, libudev for USB handling.
+
+
+
+9. Screenshot Editor
+c program with About button saying Author Jay Mee show compile code for filename screenshot-editor.c
+Purpose: Take, annotate, and save screenshots with an easy-to-use GUI.
+GUI Features:
+Take a full-screen, window, or region screenshot.
+Annotate screenshots with text, shapes, and highlights.
+Save to file or copy to clipboard.
+Optional CLI Mode:
+Take and save a screenshot directly via commands.
+Libraries: GTK/Qt for GUI, ImageMagick for annotation.
+
+
+screenshot-editor.c/ARM64
+
+
+
+
+

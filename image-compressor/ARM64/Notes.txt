@@ -1,0 +1,16 @@
+
+
+
+
+
+
+gcc image-compressor.c -o image-compressor `pkg-config --cflags --libs gtk+-3.0` -ljpeg
+
+
+
+./image-compressor
+
+
+
+./image-compressor -c input.jpg 75
+

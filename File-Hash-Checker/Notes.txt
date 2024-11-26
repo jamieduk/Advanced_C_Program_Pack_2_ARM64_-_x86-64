@@ -1,0 +1,9 @@
+
+
+
+gcc -o file-hash-checker file-hash-checker.c $(pkg-config --cflags --libs gtk4)
+
+
+./file-hash-checker
+
+

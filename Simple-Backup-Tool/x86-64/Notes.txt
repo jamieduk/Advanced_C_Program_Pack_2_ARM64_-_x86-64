@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+
+gcc simple-backup-tool.c -o simple-backup-tool `pkg-config --cflags --libs gtk+-3.0`
+
+
+
+
+./simple-backup-tool
+

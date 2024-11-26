@@ -1,0 +1,13 @@
+sudo apt update
+sudo apt install -y libgtk-4-dev libssl-dev
+
+
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH
+
+
+gcc -o file-hash-checker file-hash-checker.c $(pkg-config --cflags --libs gtk4) -lssl -lcrypto
+
+
+./file-hash-checker
+
+
