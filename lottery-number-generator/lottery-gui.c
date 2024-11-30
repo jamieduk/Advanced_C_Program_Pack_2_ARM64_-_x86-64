@@ -1,6 +1,6 @@
 // Made By Jay @ J~Net 2024
 //
-//
+// gcc -o lottery-gui lottery-gui.c `pkg-config --cflags --libs gtk+-3.0`
 //
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,15 +13,34 @@
 
 static GtkWidget *output_text;
 
-void show_about() {
-    gtk_main_quit();
-    printf("About:\n");
-    printf("Author: Jay Mee\n");
+void show_about(GtkWidget *widget, gpointer data) {
+    GtkWidget *dialog;
+    GtkWidget *label;
+    GtkWidget *hbox;
+    GtkWidget *image;
+
+    dialog= gtk_dialog_new_with_buttons("About",
+                                         GTK_WINDOW(gtk_widget_get_toplevel(widget)),
+                                         GTK_DIALOG_MODAL,
+                                         "_OK",
+                                         GTK_RESPONSE_OK,
+                                         NULL);
+
+    hbox= gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    gtk_container_set_border_width(GTK_CONTAINER(hbox), 10);
+    gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), hbox, TRUE, TRUE, 0);
+
+    label= gtk_label_new("Lottery Number Generator\n\nAuthor: Jay Mee\n\nMade By Jay @ J~Net 2024");
+    gtk_box_pack_start(GTK_BOX(hbox), label, TRUE, TRUE, 0);
+
+    gtk_widget_show_all(dialog);
+    gtk_dialog_run(GTK_DIALOG(dialog));
+    gtk_widget_destroy(dialog);
 }
 
 int is_common(int number, int *common_numbers, int common_count) {
     for (int i=0; i < common_count; i++) {
-        if (common_numbers[i] == number) {
+        if (common_numbers[i]== number) {
             return 1; // Number is common
         }
     }
@@ -44,7 +63,7 @@ void generate_lottery_numbers(int *common_numbers, int common_count) {
 
             // Check for uniqueness
             for (j=0; j < i; j++) {
-                if (lottery[i] == lottery[j] || is_common(lottery[i], common_numbers, common_count)) {
+                if (lottery[i]== lottery[j] || is_common(lottery[i], common_numbers, common_count)) {
                     isUnique=0;
                     break;
                 }
@@ -59,7 +78,7 @@ void generate_lottery_numbers(int *common_numbers, int common_count) {
 
         // Check if bonus number is unique
         for (i=0; i < LOTTERY_SIZE; i++) {
-            if (bonus == lottery[i] || is_common(bonus, common_numbers, common_count)) {
+            if (bonus== lottery[i] || is_common(bonus, common_numbers, common_count)) {
                 isUnique=0;
                 break;
             }
@@ -112,7 +131,7 @@ void activate(GtkApplication *app, gpointer user_data) {
 
 int main(int argc, char **argv) {
     // Command-line interface
-    if (argc > 1 && strcmp(argv[1], "cli") == 0) {
+    if (argc > 1 && strcmp(argv[1], "cli")== 0) {
         // CLI options can be added here
         printf("CLI mode not implemented in this version. Please use the GUI.\n");
         return 1;
@@ -122,9 +141,9 @@ int main(int argc, char **argv) {
     GtkApplication *app;
     int status;
 
-    app=gtk_application_new("com.example.GtkLottery", G_APPLICATION_FLAGS_NONE);
+    app= gtk_application_new("com.example.GtkLottery", G_APPLICATION_DEFAULT_FLAGS);
     g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
-    status=g_application_run(G_APPLICATION(app), argc, argv);
+    status= g_application_run(G_APPLICATION(app), argc, argv);
     g_object_unref(app);
 
     return status;
