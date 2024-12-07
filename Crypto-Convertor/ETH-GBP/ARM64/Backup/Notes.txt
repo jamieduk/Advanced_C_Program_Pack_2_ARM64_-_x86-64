@@ -1,0 +1,26 @@
+
+
+
+sudo apt update
+sudo apt install -y libgtk-3-dev libcurl4-openssl-dev gcc make
+
+
+gcc -o eth-converter eth-converter.c `pkg-config --cflags --libs gtk+-3.0` -lcurl
+
+
+./eth-converter
+
+putin amount toconvert
+
+Example value eth to gbp convert amount 0.00725
+
+
+
+
+
+
+
+
+
+
+
